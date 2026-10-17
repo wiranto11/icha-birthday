@@ -269,3 +269,22 @@ p{
   -ms-user-select: none;
   user-select: none;
 }
+
+// Mobile cake stage
+@media (max-width: 600px) {
+  body.cake-stage {
+    overflow-y: hidden;
+  }
+
+  body.cake-stage .cake {
+    position: fixed;
+    top: 44vh;
+    left: 50% !important;
+    margin-left: -108px !important;
+    width: 300px;
+    height: 300px;
+    transform: scale(0.72) !important;
+    transform-origin: top left;
+    z-index: 5;
+  }
+}

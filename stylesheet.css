@@ -1346,3 +1346,197 @@ audio {
         font-size: 12px;
     }
 }
+/* Compact transparent action buttons */
+.navbar.navbar-fixed-bottom {
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+}
+
+.navbar.navbar-fixed-bottom .btn-primary {
+    display: table;
+    width: auto;
+    margin: 8px auto;
+    padding: 10px 16px;
+}
+/* Mobile 9:16 layout */
+@media (max-width: 600px) {
+    html,
+    body {
+        width: 100%;
+        min-width: 0;
+        overflow-x: hidden;
+    }
+
+    .container {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0 10px;
+    }
+
+    .row {
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    .bulb-holder {
+        height: 48px;
+        padding: 0 2px;
+    }
+
+    .bulb {
+        width: 36px;
+        height: 36px;
+        background-size: 36px 36px;
+    }
+
+    .bannar {
+        width: 100%;
+        height: auto;
+    }
+
+    .cake {
+        transform: scale(0.72);
+        transform-origin: top center;
+    }
+
+    .message {
+        margin-top: 120px;
+        padding: 0 12px;
+    }
+
+    .message p {
+        font-size: clamp(18px, 5vw, 24px);
+        line-height: 1.25;
+    }
+
+    .balloons {
+        width: 64px;
+        height: 117px;
+        background-size: 64px 117px;
+    }
+
+    .balloons h2 {
+        font-size: 32px;
+    }
+
+    .navbar.navbar-fixed-bottom {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .navbar.navbar-fixed-bottom .btn-primary {
+        max-width: calc(100vw - 32px);
+        white-space: normal;
+        font-size: 11px;
+    }
+}
+/* Mobile cake and message positioning */
+@media (max-width: 600px) {
+    .cake {
+        top: 47vh;
+        left: 50%;
+        margin-left: 0;
+        transform: translateX(-50%) scale(0.72);
+        transform-origin: top center;
+    }
+
+    .message {
+        margin-top: 68vh;
+        padding: 0 14px;
+        text-align: center;
+    }
+
+    .message p {
+        text-align: center;
+    }
+}
+/* Center cake transform on mobile */
+@media (max-width: 600px) {
+    .cake {
+        transform-origin: top left;
+    }
+}
+/* Mobile cake final centering */
+@media (max-width: 600px) {
+    .cake {
+        left: calc(50% - 150px);
+        margin-left: 0 !important;
+        transform: scale(0.72);
+        transform-origin: top left;
+    }
+}
+/* Mobile cake position final */
+@media (max-width: 600px) {
+    .cake {
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        top: 47vh;
+        left: 50%;
+        margin-left: 0 !important;
+        transform: translateX(-111.6px) scale(0.72);
+        transform-origin: top left;
+    }
+}
+/* Mobile cake viewport centering */
+@media (max-width: 600px) {
+    .cake {
+        left: 50vw;
+    }
+}
+/* Mobile cake centered transform */
+@media (max-width: 600px) {
+    .cake {
+        left: 50vw;
+        transform: translateX(-50%) scale(0.72);
+        transform-origin: top center;
+    }
+}
+/* Mobile cake offset correction */
+@media (max-width: 600px) {
+    .cake {
+        left: calc(50vw - 10px);
+    }
+}
+/* Mobile centered balloons */
+@media (max-width: 600px) {
+    .balloons {
+        width: 44px;
+        height: 81px;
+        background-size: 44px 81px;
+    }
+
+    .balloons h2 {
+        font-size: 22px;
+        line-height: 1;
+        margin-top: 18px;
+    }
+}
+/* Mobile cake and message final layout */
+@media (max-width: 600px) {
+    .cake {
+        top: clamp(70px, 14vh, 110px);
+    }
+
+    .message {
+        margin-top: 90px;
+        min-height: 300px;
+        text-align: center;
+    }
+}
+/* Keep mobile cake inside viewport */
+@media (max-width: 600px) {
+    .cake {
+        position: fixed;
+        top: clamp(240px, 44vh, 290px);
+        z-index: 5;
+    }
+}
+/* Force mobile cake viewport positioning */
+@media (max-width: 600px) {
+    body .cake {
+        position: fixed !important;
+        top: clamp(240px, 44vh, 290px) !important;
+    }
+}
