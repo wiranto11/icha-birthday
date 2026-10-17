@@ -1685,15 +1685,15 @@ body.peach-after {
         bottom: auto;
     }
 }
-/* Keep trumpets and stars in separate decoration rows. */
+/* Keep confetti and stars in separate decoration rows. */
 body.birthday-decorations::before {
-    content: "\1F3BA   \1F3BA   \1F3BA";
+    content: "\1F38A   \1F389   \1F38A";
 }
 
 body.birthday-decorations::after {
     content: "\2726   \2727   \2726   \2727   \2726";
 }
-/* Desktop layering and decoration placement. */
+/* Desktop layering and confetti placement. */
 @media (min-width: 601px) {
     body .navbar.navbar-fixed-bottom {
         z-index: 10000 !important;
