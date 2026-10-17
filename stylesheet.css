@@ -1693,3 +1693,40 @@ body.birthday-decorations::before {
 body.birthday-decorations::after {
     content: "\2726   \2727   \2726   \2727   \2726";
 }
+/* Desktop layering and decoration placement. */
+@media (min-width: 601px) {
+    body .navbar.navbar-fixed-bottom {
+        z-index: 10000 !important;
+        pointer-events: auto;
+    }
+
+    body.birthday-decorations::before {
+        z-index: 3;
+        top: 52vh;
+        font-size: 34px;
+        letter-spacing: 10px;
+    }
+
+    body.birthday-decorations::after {
+        z-index: 3;
+        top: 80vh;
+        bottom: auto;
+        font-size: 30px;
+        letter-spacing: 12px;
+    }
+
+    body .cake {
+        z-index: 4;
+    }
+}
+@media (min-width: 601px) {
+    body.birthday-decorations::after {
+        top: 87vh;
+    }
+}
+@media (min-width: 601px) {
+    /* Balloons remain visible but cannot block desktop button clicks. */
+    body .balloons {
+        pointer-events: none;
+    }
+}
