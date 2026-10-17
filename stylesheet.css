@@ -1564,3 +1564,134 @@ audio {
         box-shadow: none;
     }
 }
+.love-hearts {
+    text-transform: none !important;
+    font-size: 38px !important;
+    letter-spacing: 6px;
+}
+/* Warm birthday background */
+body {
+    background:
+        radial-gradient(circle at 50% 45%, rgba(255, 255, 255, 0.48), transparent 34%),
+        linear-gradient(180deg, #ffe9c7 0%, #ffd8ad 100%);
+    background-attachment: fixed;
+}
+/* Center mobile controls above cake */
+@media (max-width: 600px) {
+    body .navbar.navbar-fixed-bottom {
+        top: 45% !important;
+    }
+}
+/* Birthday background decorations */
+body::before,
+body::after {
+    position: fixed;
+    z-index: 0;
+    pointer-events: none;
+    width: 100%;
+    text-align: center;
+    font-family: "Segoe UI Emoji", "Apple Color Emoji", sans-serif;
+}
+
+body::before {
+    content: "🎺    ✨    🎺";
+    top: 18%;
+    left: 0;
+    color: rgba(255, 190, 70, 0.42);
+    font-size: clamp(28px, 5vw, 58px);
+    letter-spacing: 12px;
+    opacity: 0.5;
+    animation: trumpet-glow 3s ease-in-out infinite;
+}
+
+body::after {
+    content: "✦   ✧   ✦   ✧   ✦";
+    bottom: 18%;
+    left: 0;
+    color: rgba(255, 255, 255, 0.72);
+    font-size: clamp(20px, 4vw, 42px);
+    letter-spacing: 16px;
+    animation: star-twinkle 2.4s ease-in-out infinite;
+}
+
+.container {
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes trumpet-glow {
+    0%, 100% { opacity: 0.28; transform: scale(0.96); }
+    50% { opacity: 0.62; transform: scale(1); }
+}
+
+@keyframes star-twinkle {
+    0%, 100% { opacity: 0.25; transform: translateY(0); }
+    50% { opacity: 0.9; transform: translateY(-8px); }
+}
+/* Show the decorations only after the Happy Birthday step is clicked. */
+body::before,
+body::after {
+    visibility: hidden;
+    opacity: 0;
+    animation: none;
+}
+
+body.birthday-decorations::before,
+body.birthday-decorations::after {
+    visibility: visible;
+}
+
+body.birthday-decorations::before {
+    top: 40vh;
+    opacity: 0.5;
+    animation: trumpet-glow 3s ease-in-out infinite;
+}
+
+body.birthday-decorations::after {
+    top: 43vh;
+    bottom: auto;
+    opacity: 0.8;
+    animation: star-twinkle 2.4s ease-in-out infinite;
+}
+
+@media (max-width: 600px) {
+    body.birthday-decorations::before {
+        top: 40vh;
+        font-size: 24px;
+        letter-spacing: 4px;
+    }
+
+    body.birthday-decorations::after {
+        top: 43vh;
+        font-size: 20px;
+        letter-spacing: 6px;
+    }
+}
+/* Initial dark screen; lighting starts when Turn on Lights is clicked. */
+body:not(.peach):not(.peach-after) {
+    background: #000;
+}
+
+body.peach,
+body.peach-after {
+    background:
+        radial-gradient(circle at 50% 45%, rgba(255, 255, 255, 0.48), transparent 34%),
+        linear-gradient(180deg, #ffe9c7 0%, #ffd8ad 100%);
+    background-attachment: fixed;
+}
+
+/* Keep the sparkling stars below the cake on mobile. */
+@media (max-width: 600px) {
+    body.birthday-decorations::after {
+        top: 80vh;
+        bottom: auto;
+    }
+}
+/* Keep trumpets and stars in separate decoration rows. */
+body.birthday-decorations::before {
+    content: "\1F3BA    \1F3BA";
+}
+
+body.birthday-decorations::after {
+    content: "\2726   \2727   \2726   \2727   \2726";
+}

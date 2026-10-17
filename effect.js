@@ -2,7 +2,7 @@ $(window).load(function(){
 	$('.loading').fadeOut('fast');
 	$('.container').fadeIn('fast');
 });
-$('document').ready(function(){
+$(document).ready(function(){
 		var vw;
         var sequenceStep = 0;
 		// Keep the birthday sequence idle until the first button is clicked.
@@ -39,14 +39,19 @@ $('document').ready(function(){
 		if (sequenceStep !== 1) return;
 		sequenceStep = 2;
 		var audio = $('.song')[0];
-        try { audio.play(); } catch (error) {}
+        if (audio) {
+            var playPromise = audio.play();
+            if (playPromise && typeof playPromise.catch === 'function') {
+                playPromise.catch(function () {});
+            }
+        }
         $('#bulb_yellow').addClass('bulb-glow-yellow-after');
 		$('#bulb_red').addClass('bulb-glow-red-after');
 		$('#bulb_blue').addClass('bulb-glow-blue-after');
 		$('#bulb_green').addClass('bulb-glow-green-after');
 		$('#bulb_pink').addClass('bulb-glow-pink-after');
 		$('#bulb_orange').addClass('bulb-glow-orange-after');
-		$('body').css('backgroud-color','#FFF');
+		$('body').css('background-color','#FFF');
 		$('body').addClass('peach-after');
 		$(this).fadeOut('slow').delay(2700).promise().done(function(){
 			$('#bannar_coming').fadeIn('slow');
@@ -160,6 +165,7 @@ $('document').ready(function(){
 	$('#wish_message').click(function(){
 		if (sequenceStep !== 6) return;
 		sequenceStep = 7;
+        $('body').addClass('birthday-decorations');
 		 vw = $(window).width()/2;
 
 		$('#b1,#b2,#b3,#b4,#b5,#b6,#b7').stop();
@@ -200,7 +206,7 @@ $('document').ready(function(){
 	$('#story').click(function(){
 		if (sequenceStep !== 7) return;
 		sequenceStep = 8;
-        $('body').removeClass('cake-stage');
+        $('body').removeClass('cake-stage birthday-decorations');
 		$(this).fadeOut('slow');
 		$('.cake').fadeOut('fast').promise().done(function(){
 			$('.message').fadeIn('slow');
@@ -212,10 +218,12 @@ $('document').ready(function(){
 			$("p:nth-child("+i+")").fadeOut('slow').delay(800).promise().done(function(){
 			i=i+1;
 			$("p:nth-child("+i+")").fadeIn('slow').delay(1000);
-			if(i==50){
-				$("p:nth-child(49)").fadeOut('slow').promise().done(function () {
+			if(i==48){
+				$("p:nth-child(48)").delay(1000).fadeOut('slow').promise().done(function () {
 				$('.message').fadeOut('slow').promise().done(function(){
 				    $('.cake').fadeIn('fast');
+
+				    $('body').addClass('birthday-decorations');
 				});
 				});
 			}
