@@ -1540,3 +1540,27 @@ audio {
         top: clamp(240px, 44vh, 290px) !important;
     }
 }
+/* Mobile spacing and transparent controls */
+@media (max-width: 600px) {
+    body {
+        padding-top: 18px;
+    }
+
+    body .navbar.navbar-fixed-bottom {
+        top: 68%;
+        padding: 0 !important;
+        border: 0 !important;
+        background: transparent !important;
+        box-shadow: none !important;
+    }
+
+    body .navbar.navbar-fixed-bottom .row,
+    body .navbar.navbar-fixed-bottom .col-md-6 {
+        padding: 0 !important;
+        background: transparent !important;
+    }
+
+    body .navbar.navbar-fixed-bottom .btn-primary {
+        box-shadow: none;
+    }
+}
