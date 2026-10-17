@@ -1572,7 +1572,6 @@ audio {
 /* Warm birthday background */
 body {
     background:
-        radial-gradient(circle at 50% 45%, rgba(255, 255, 255, 0.48), transparent 34%),
         linear-gradient(180deg, #ffe9c7 0%, #ffd8ad 100%);
     background-attachment: fixed;
 }
@@ -1675,7 +1674,6 @@ body:not(.peach):not(.peach-after) {
 body.peach,
 body.peach-after {
     background:
-        radial-gradient(circle at 50% 45%, rgba(255, 255, 255, 0.48), transparent 34%),
         linear-gradient(180deg, #ffe9c7 0%, #ffd8ad 100%);
     background-attachment: fixed;
 }
@@ -1689,7 +1687,7 @@ body.peach-after {
 }
 /* Keep trumpets and stars in separate decoration rows. */
 body.birthday-decorations::before {
-    content: "\1F3BA    \1F3BA";
+    content: "\1F3BA   \1F3BA   \1F3BA";
 }
 
 body.birthday-decorations::after {
